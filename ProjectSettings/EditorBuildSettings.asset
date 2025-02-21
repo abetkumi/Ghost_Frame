@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title.unity
+    path: Assets/JP_School corridor_V2/Scenes/School_Corridor/Scenes/Title.unity
     guid: 118bb01c601a8d4429ec7169953224ec
   - enabled: 1
-    path: Assets/Scenes/School.unity
+    path: Assets/JP_School corridor_V2/Scenes/School_Corridor/Scenes/School.unity
     guid: 65476319be9c1634fa0be63bf385c533
   m_configObjects: {}
