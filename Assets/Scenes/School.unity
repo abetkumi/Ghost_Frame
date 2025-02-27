@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18376537, g: 0.22913466, b: 0.30447495, a: 1}
+  m_IndirectSpecularColor: {r: 0.008502044, g: 0.0069944616, b: 0.022980697, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,9 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112009756, guid: 5aed4389bedaf3e45b9ba9c7153202dd,
+  m_LightingDataAsset: {fileID: 112000000, guid: b30d810e8792da740bf9fac3aaa5a3f2,
     type: 2}
-  m_LightingSettings: {fileID: 1556447334}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cee1c7d1c154dfb4393e58a2f0eaa244,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8799,7 +8800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 047ce187a75caaa46bf243983c2e4609, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.5
+      value: 27.46
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 047ce187a75caaa46bf243983c2e4609, type: 3}
       propertyPath: m_LocalPosition.y
@@ -113514,7 +113515,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 3.5, z: 0.099999994}
+  m_Size: {x: 1.89, y: 3.5, z: 0.099999994}
   m_Center: {x: 0, y: 1.75, z: 0.049999997}
 --- !u!1 &930159021
 GameObject:
@@ -186638,6 +186639,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 3.5, z: 8}
   m_Center: {x: -5, y: 1.75, z: 0}
+--- !u!65 &1501606279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501606270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 3.5, z: 8}
+  m_Center: {x: 5.1, y: 1.75, z: 0}
 --- !u!1001 &1501640061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191702,70 +191724,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1999999, y: 0.9, z: 0.3825}
   m_Center: {x: 0, y: 0.45, z: 0.0012499988}
---- !u!850595691 &1556447334
-LightingSettings:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Settings.lighting
-  serializedVersion: 6
-  m_GIWorkflowMode: 1
-  m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 1
-  m_RealtimeEnvironmentLighting: 1
-  m_BounceScale: 1
-  m_AlbedoBoost: 1
-  m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
-  m_BakeBackend: 0
-  m_LightmapMaxSize: 2048
-  m_BakeResolution: 40
-  m_Padding: 8
-  m_LightmapCompression: 3
-  m_AO: 0
-  m_AOMaxDistance: 1
-  m_CompAOExponent: 1
-  m_CompAOExponentDirect: 0
-  m_ExtractAO: 0
-  m_MixedBakeMode: 2
-  m_LightmapsBakeMode: 1
-  m_FilterMode: 1
-  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
-  m_ExportTrainingData: 0
-  m_TrainingDataDestination: TrainingData
-  m_RealtimeResolution: 4
-  m_ForceWhiteAlbedo: 0
-  m_ForceUpdates: 0
-  m_FinalGather: 1
-  m_FinalGatherRayCount: 256
-  m_FinalGatherFiltering: 1
-  m_PVRCulling: 1
-  m_PVRSampling: 1
-  m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 512
-  m_PVREnvironmentSampleCount: 512
-  m_PVREnvironmentReferencePointCount: 2048
-  m_LightProbeSampleCountMultiplier: 4
-  m_PVRBounces: 2
-  m_PVRMinBounces: 2
-  m_PVREnvironmentImportanceSampling: 0
-  m_PVRFilteringMode: 2
-  m_PVRDenoiserTypeDirect: 0
-  m_PVRDenoiserTypeIndirect: 0
-  m_PVRDenoiserTypeAO: 0
-  m_PVRFilterTypeDirect: 0
-  m_PVRFilterTypeIndirect: 0
-  m_PVRFilterTypeAO: 0
-  m_PVRFilteringGaussRadiusDirect: 1
-  m_PVRFilteringGaussRadiusIndirect: 5
-  m_PVRFilteringGaussRadiusAO: 2
-  m_PVRFilteringAtrousPositionSigmaDirect: 0.5
-  m_PVRFilteringAtrousPositionSigmaIndirect: 2
-  m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_PVRTiledBaking: 0
-  m_NumRaysToShootPerTexel: -1
-  m_RespectSceneVisibilityWhenBakingGI: 0
 --- !u!1 &1556854747
 GameObject:
   m_ObjectHideFlags: 0
@@ -206360,8 +206318,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 3.5, z: 0.099999994}
-  m_Center: {x: 0, y: 1.75, z: 0.049999997}
+  m_Size: {x: 1.91, y: 3.5, z: 0.26}
+  m_Center: {x: 0, y: 1.75, z: -0.09}
 --- !u!1 &1675051324
 GameObject:
   m_ObjectHideFlags: 0
@@ -218208,6 +218166,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7bc7e23469c8cb64284d312068355671, type: 2}
+    - target: {fileID: 23151644627772312, guid: bce61c8eb2922d44c9b3f55591835cff,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 23164934198130684, guid: bce61c8eb2922d44c9b3f55591835cff,
         type: 3}
       propertyPath: m_ScaleInLightmap
@@ -230836,13 +230799,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.1e-43, y: 0, z: 0, w: 5.3856604e-37}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -264377,6 +264340,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1501606275}
+    - targetCorrespondingSourceObject: {fileID: 1926033669737574, guid: bce61c8eb2922d44c9b3f55591835cff,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1501606279}
     - targetCorrespondingSourceObject: {fileID: 1792661361737752, guid: bce61c8eb2922d44c9b3f55591835cff,
         type: 3}
       insertIndex: -1
