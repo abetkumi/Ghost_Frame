@@ -131,7 +131,7 @@
 </p>
 
  ### Unitask
- Unitskを使って非同期処理でシーン切り替えやUI表示のディレイなどを実装しました。<br/>
+ Unitaskを使って非同期処理でシーン切り替えやUI表示のディレイなどを実装しました。<br/>
  
  ```json
      async UniTask LoadScene(string sceneName)

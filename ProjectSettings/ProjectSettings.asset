@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: "\u5C31\u6D3B\u4F5C\u54C1\u3000\u4F5C\u6210\u30B2\u30FC\u30E0"
+  productName: GhostFrame
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -162,7 +162,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.unity3d.vikingVillageURP
-    Standalone: com.DefaultCompany.------------------------------
+    Standalone: com.DefaultCompany.GhostFrame
     iPhone: com.Company.ProductName
     tvOS: com.Company.ProductName
   buildNumber:
