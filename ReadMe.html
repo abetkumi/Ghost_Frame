@@ -140,7 +140,7 @@
         <body class="vscode-body vscode-light">
             <h1 id="gostframe">GostFrame</h1>
 <p align="center">
-<img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Title.png" alt="GhostFrame">
+<img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Title.png" alt="GhostFrame">
 </p><br/>
 河原電子ビジネス専門学校　ゲームクリエイター科　2年<br/>
 氏名：阿部　匠<br/>
@@ -190,11 +190,11 @@
 <p>夜の廃校となった小学校が舞台のホラー風FPSゲームです。<br/>
 学校内では幽霊がさまよっておりプレイヤーを攻撃してきます。<br/>
 プレイヤーはカメラを使用して幽霊のいる学校からの脱出を目指します。<br/></p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Game1.png" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Game1.png" width="600"><br></p>
 </p>
 <p>黒板には脱出のヒントが書かれています。<br/>
 一部の漢字が未対応のフォントであったのと小学校であるためヒントは子供っぽくなるよう一部ひらがなで書きました。<br/></p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Decal.png" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Decal.png" width="600"><br></p>
 </p>
 <h3 id="ゲーム内ギミック">ゲーム内ギミック</h3>
 <p>ゲーム内にあるギミック</p>
@@ -208,7 +208,7 @@
 </ul>
 </li>
 </ol>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Shot.png" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Shot.png" width="600"><br></p>
 </p>
 <ol>
 <li>
@@ -222,7 +222,7 @@
 <!-- 勾玉を壊すgifを挿入 -->
 </li>
 </ol>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\MagatamaBreak.gif" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\MagatamaBreak.gif" width="600"><br></p>
 </p>
 <!-- テスト用コメント
 1. テスト
@@ -277,7 +277,7 @@
 攻撃にはフェイタル攻撃というものがあり、エネミーの攻撃直前のタイミングで攻撃チャージが最大になるカウンター攻撃と最大チャージ攻撃時の追加攻撃のチャンスがあります。<br/></p>
 <h3 id="エネミーについて">エネミーについて</h3>
 <p>エネミーもステートで管理しています。</p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\敵のステート.png" width="600"><br>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\敵のステート.png" width="600"><br>
 エネミーのステート管理</p>
 </p>
 <h2 id="使用した技術">使用した技術</h2>
@@ -293,29 +293,29 @@
 <p>カメラとプレイヤーの間にオブジェクトが存在するとプレイヤーが見えなくなってしまう現象が発生しました。<br/>
 そこでシェーダーにディザリングを組み込むことによってオブジェクトがカメラに近づくと徐々に見えなくなっていき、遠いとはっきり見えるように改良しました。<br/></p>
    <!-- ディザリングのオン、オフの画像を挿入 -->
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\dithering.png" width="720"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\dithering.png" width="720"><br></p>
 </p>
 <h3 id="ナビメッシュ">ナビメッシュ</h3>
 <p>エネミーの挙動はナビメッシュを使いました。<br/>
 巡回用のポインタを置き、ポインタに近づくと別のポインタに向かって歩く処理を実現しました。<br/>
 プレイヤーが近づいた場合、プレイヤーコリジョンタグを持ったものがサーチ用の敵のコリジョンに接触することによって、
 ナビメッシュの目標をプレイヤーに変更することができました。</p>
-<img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Navmesh.gif" width="600">
+<img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Navmesh.gif" width="600">
 </p>
 <h3 id="unitask">Unitask</h3>
-<p>Unitskを使って非同期処理でシーン切り替えやUI表示のディレイなどを実装しました。<br/></p>
+<p>Unitaskを使って非同期処理でシーン切り替えやUI表示のディレイなどを実装しました。<br/></p>
 <pre><code class="language-json">    async UniTask LoadScene(string sceneName)
    <span class="hljs-punctuation">{</span>
        await SceneManager.LoadSceneAsync(sceneName).ToUniTask();
    <span class="hljs-punctuation">}</span>
 </code></pre>
   <!-- UnitaskでのUI表示を挿入 -->
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\セリフUI.gif" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\セリフUI.gif" width="600"><br></p>
 </p>
 <h3 id="デカール">デカール</h3>
 <p>チュートリアル用の説明を黒板に表示させる為にデカールを使いました。<br/>
 デカールを使うことによって黒板に書かれている文字や絵がちゃんと黒板に書かれているように見せることができました。</p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Decal.png" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Decal.png" width="600"><br></p>
 </p>
 <h3 id="air-sticker">Air Sticker</h3>
 <p>デカールを使うにあたって2つの問題が出てきました。<br/>
@@ -324,27 +324,23 @@ AirStickerはデカールの処理対象を絞ることによって処理を軽�
 <p>問題の1つ目はプレイヤーがデカールの範囲内に入るとプロジェクターのようにプレイヤーにもデカールの文字が写ってしまいました。
 AirStickerはデカールを受けるレシーバーオブジェクトを指定することができ黒板にのみ表示させることができました。</p>
   <!-- AirStickerのオン、オフの画像を挿入 -->
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\AirSticker2.png" width="720"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\AirSticker2.png" width="720"><br></p>
 </p>
 <p>2つ目は窓などの遮蔽物があるとディザリングの透過処理で見ることができませんでした。<br/></p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\AirSticker.png" width="720"><br>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\AirSticker.png" width="720"><br>
 左：AirSticker適用前　右：AirSticker適用後</p>
 </p>
 <p>これはUnityのデカールは下記の図のようにDepthNormalPrepassで作成された深度情報を元にデカールを貼り付けるからです。</p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Depth.png" width="600"><br>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Depth.png" width="600"><br>
 DepthNormalPrepass</p>
 </p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Depth2.png" width="600"><br>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Depth2.png" width="600"><br>
 D-BufferRender</p>
 </p>
 <p>一方、AirStickerはメッシュを生成するデカールとなっていて、Unityのデカールの特殊な処理と異なり普通のモデル描画です。<br/>
 このようにAirStickerを利用することで、通常の背景と同じようにデカールを描画できるためこの問題を解決することができました。<br/></p>
-<p><img src="file:///c:\Users\阿部匠\Documents\授業用\Unity\就活作品　作成ゲーム\Assets\texture_Readme\Depth3.png" width="600"><br></p>
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Depth3.png" width="600"><br></p>
 </p>
- <!--(※想定されるツッコミ・DepthNormalPrepassでディザ抜きすれば解決すると思うのですが、それを採用しなかった理由は何ですか？
-　DepthNormalPrepassでディザ抜きをする方法が分からなかったのと、Air Stickerを使えば解決できることが分かっていたのでこの方法にしました。
-　ただ、この問題自体はこれで解決しているのですが、深度情報が正しくないと被写界深度などの深度情報を使う処理もおかしくなるということが分かっているので、今後の改善として考えています。
-なぜAirStickerを知っていたのか？教えていただいている講師の方が作ったOSS（オープンソースソフトウェア）の１つとして紹介されていたのを覚えていた) -->
 
             
             
