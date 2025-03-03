@@ -23,15 +23,10 @@ public class PauseButtonScript : MonoBehaviour
         if (!m_startLoading)
         {
             m_startLoading = true;
+            Time.timeScale = 1.0f;
             //メインゲームシーンに移動する
             SceneManager.LoadScene("Title");
             Debug.Log("タイトルに戻る");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

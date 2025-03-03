@@ -45636,18 +45636,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseButtonScript, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &406604189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158362,6 +158350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1273075869}
   - component: {fileID: 1273075868}
+  - component: {fileID: 1273075870}
   m_Layer: 0
   m_Name: BGMObject
   m_TagString: Untagged
@@ -158379,9 +158368,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c6d9114da2f3f094d94e6a3d683642f0, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 82476ebea261a2e49bbc653bd0caae9c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.314
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -158480,6 +158469,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1183489666}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1273075870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273075867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c1778a41ab71347ba786c0bc156dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1273078882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -201823,7 +201824,7 @@ GameObject:
   - component: {fileID: 1639389746}
   - component: {fileID: 1639389745}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

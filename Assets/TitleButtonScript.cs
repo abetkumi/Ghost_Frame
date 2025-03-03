@@ -22,6 +22,9 @@ public class TitleButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_startLoading = false;
+        t = 0.0f;
+        m_loadtext = 0.0f;
         m_titleScript = m_titleManagerObject.GetComponent<TitleScript>();
         m_focusButton = m_focusButton.GetComponent<Button>();
         m_loadingObject.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
@@ -66,6 +69,7 @@ public class TitleButtonScript : MonoBehaviour
             if (t > 1.0f)
             {
                 t = 1.0f;
+                m_focusButton.gameObject.SetActive(false);
             }
             if (m_loadtext > 1.0f)
             {
