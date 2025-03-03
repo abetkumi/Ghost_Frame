@@ -7,11 +7,9 @@ using UnityEngine.SceneManagement;
 public class TitleScript : MonoBehaviour
 {
     //　回転スピード
-    [SerializeField]
-    private float m_rotateSpeed = 0.5f;
+    [SerializeField] private float m_rotateSpeed = 0.5f;
     //　スカイボックスのマテリアル
     private Material m_skyboxMaterial;
-    bool m_startLoading = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +17,7 @@ public class TitleScript : MonoBehaviour
         m_skyboxMaterial = RenderSettings.skybox;
     }
 
-    async UniTask LoadScene(string sceneName)
+    async public UniTask LoadScene(string sceneName)
     {
         await SceneManager.LoadSceneAsync(sceneName).ToUniTask();
     }
@@ -27,15 +25,6 @@ public class TitleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        //どこかのキーが押されたら
-        if (Input.anyKeyDown && !m_startLoading)
-        {
-            m_startLoading = true;
-            //メインゲームシーンに移動する
-            LoadScene("School").Forget();
-        }           
-            
         //　スカイボックスマテリアルのRotationを操作して角度を変化させる
         m_skyboxMaterial.SetFloat("_Rotation", Mathf.Repeat(m_skyboxMaterial.GetFloat("_Rotation") + m_rotateSpeed * Time.deltaTime, 360f));
     }

@@ -16,13 +16,14 @@ enum GameStatus
     GameOver,
     GameClear,
     GameStop,
+    GamePause,
 }
 
 //ゲームマネージャークラスのスクリプト
 public class GameManager : MonoBehaviour
 {
     //ゲームオーバー用変数
-    [SerializeField] GameObject myGameOverImage; 
+    [SerializeField] GameObject myGameOverImage;
     Image m_gameOverImage;
     //ゲームクリア変数
     [SerializeField] GameObject myGameClearImage;
@@ -55,9 +56,11 @@ public class GameManager : MonoBehaviour
     //ゲームクリアスクリプト用変数
     [SerializeField] GameObject m_gameClearObject;
     GameClearScript m_gameClearScript;
+    //ポーズメニュー用スクリプト
+    [SerializeField] GameObject m_pauseObject;
     //ステータス用変数
     GameStatus m_gameStatus = GameStatus.Init;
- 
+
 
     // Start is called before the first frame update
     void Start()
@@ -98,15 +101,14 @@ public class GameManager : MonoBehaviour
         m_playerScript.doInit();
         //カメラの初期設定
         m_cameraScript.doInit();
-        //ゲームオーバー画像の非表示
-        //m_gameOverSprite.SetActive(false);
         //ステータス更新
+        Time.timeScale = 1.0f;
         m_gameStatus = GameStatus.GamePlay;
     }
 
     //インゲーム用メソッド
     async void doInGame()
-    {   
+    {
         //カメラ操作
         m_cameraScript.doMove();
         //カメラのステータス
@@ -116,7 +118,7 @@ public class GameManager : MonoBehaviour
         //プレイヤーのステータス
         m_playerScript.doAnimStatus();
         //プレイヤー攻撃時のメソッド
-        m_attackScript.doAttack_Gauge(20.0f,m_cameraScript.cameraStatus);
+        m_attackScript.doAttack_Gauge(20.0f, m_cameraScript.cameraStatus);
         //プレイヤーHP変動
         m_playerHPScript.doHit();
         if (m_playerHPScript.isHPView == true)
@@ -128,6 +130,13 @@ public class GameManager : MonoBehaviour
         {
             await UniTask.Delay(1000);
             m_gameStatus = GameStatus.GameOver;
+        }
+        //ポーズ画面移行
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            m_gameStatus = GameStatus.GamePause;
+            m_pauseObject.SetActive(true);
+            Time.timeScale = 0.0f;
         }
     }
 
@@ -162,7 +171,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("タイトルに戻る");
             m_gameStatus = GameStatus.Init;
             //メインゲームシーンに移動する
-            SceneManager.LoadScene("Title");         
+            SceneManager.LoadScene("Title");
         }
     }
 
@@ -176,6 +185,16 @@ public class GameManager : MonoBehaviour
             m_gameStatus = GameStatus.GameStop;
             m_playerScript.m_animator.SetTrigger("GameClear_Last");
             m_audioSource.PlayOneShot(m_fallSE);
+        }
+    }
+
+    void doGamePause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            m_gameStatus = GameStatus.GamePlay;
+            m_pauseObject.SetActive(false);
+            Time.timeScale = 1.0f;
         }
     }
 
@@ -211,6 +230,9 @@ public class GameManager : MonoBehaviour
                     //メインゲームシーンに移動する
                     SceneManager.LoadScene("Title");
                 }
+                break;
+            case GameStatus.GamePause:
+                doGamePause();
                 break;
             default:
                 break;
