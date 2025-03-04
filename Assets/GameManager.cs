@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
     Image m_gameClearImage;
     [SerializeField] GameObject TMPObject;
     Press_Any_KeyTMPScript myTMP;
-    [SerializeField] GameObject BGMObject;
+    //BGM管理スクリプト用変数
+    [SerializeField] GameObject m_BGMObject;
+    BGMScript m_BGMScript;
     [SerializeField] AudioClip m_fallSE;
     AudioSource m_audioSource;
     //画像表示用変数
@@ -86,6 +88,8 @@ public class GameManager : MonoBehaviour
         //ゲームクリア画像
         m_gameClearImage = myGameClearImage.GetComponent<Image>();
         t = 0.0f;
+        //BGM管理オブジェクトからBGM変更スクリプトを取得
+        m_BGMScript = m_BGMObject.GetComponent<BGMScript>();
         //オーディオソース
         m_audioSource = GetComponent<AudioSource>();
 
@@ -138,6 +142,8 @@ public class GameManager : MonoBehaviour
             m_pauseObject.SetActive(true);
             Time.timeScale = 0.0f;
         }
+        //BGM変更
+        m_BGMScript.BGMChange();
     }
 
     //プレイヤーがゲームクリア判定に入ったら
@@ -150,7 +156,7 @@ public class GameManager : MonoBehaviour
                 m_playerScript.m_audioSource.Stop();
             }
             m_gameStatus = GameStatus.GameClear;
-            BGMObject.SetActive(false);
+            m_BGMObject.SetActive(false);
         }
     }
 
