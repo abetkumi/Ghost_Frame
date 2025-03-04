@@ -27,13 +27,15 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private Transform m_movePoint_S;
     [SerializeField] private Transform m_target;
     [SerializeField] private Transform m_enemyTrans;
-    [SerializeField] private SphereCollider m_collider;
+    [SerializeField] private BoxCollider m_collider;
     [SerializeField] private SphereCollider m_attackCollider;
     [SerializeField] private float m_nextCountTime = 0.0f;
     [SerializeField] private int m_amountOfDamageAtOneTime = 100;
     [SerializeField] private AudioClip m_enemyDeadVoice;
     [SerializeField] private AudioClip m_enemyDamageVoice;
-
+    //BGM管理スクリプト用変数
+    [SerializeField] GameObject m_BGMObject;
+    BGMScript m_BGMScript;
     //プレイヤー用変数
     PlayerScript m_playerScript;
     PlayerHPScript m_playerHPScript;
@@ -97,6 +99,8 @@ public class EnemyScript : MonoBehaviour
         m_hpSlider = transform.Find("EnemyHP_Bar/HPSlider").GetComponent<Slider>();
         m_bulkHPSlider = transform.Find("EnemyHP_Bar/BulkHPSlider").GetComponent<Slider>();
         m_audioSource = GetComponent<AudioSource>();
+        //BGM管理オブジェクトからBGM変更スクリプトを取得
+        m_BGMScript = m_BGMObject.GetComponent<BGMScript>();
         m_hpSlider.value = 1.0f;
         m_bulkHPSlider.value = 1.0f;
         ChangeEnemyStatusIfPossible( EnemyStatus.Idle );
@@ -303,6 +307,7 @@ public class EnemyScript : MonoBehaviour
         m_collider.enabled = false;
         m_animator.SetBool(DeadHash, true);
         m_agent.speed = 0.0f;
+        m_BGMScript.m_BGMstatus = BGMStatus.NormalBGM;
         m_enemyHeadScript.doDeadHead();
         StartCoroutine(nameof(DeadTimer));
         Debug.Log("4んだ");

@@ -37,9 +37,9 @@ public class EnemySearchScript : MonoBehaviour
         if (col.tag == "Player")
         {
             m_BGMScript.m_BGMstatus = BGMStatus.NormalBGM;
-             m_enemyScript.ChangeEnemyStatusIfPossible( EnemyStatus.Search ) ;
-             m_enemyScript.m_agent.SetDestination(m_enemyScript.m_movePoint_N.position);
-             Debug.Log("Œ©Ž¸‚Á‚½");
+            m_enemyScript.ChangeEnemyStatusIfPossible( EnemyStatus.Search ) ;
+            m_enemyScript.m_agent.SetDestination(m_enemyScript.m_movePoint_N.position);
+            Debug.Log("Œ©Ž¸‚Á‚½");
         }
     }
 }

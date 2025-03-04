@@ -53325,12 +53325,13 @@ MonoBehaviour:
   m_movePoint_S: {fileID: 787727979}
   m_target: {fileID: 457835537}
   m_enemyTrans: {fileID: 470424625}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 260310473}
   m_attackCollider: {fileID: 1227154173}
   m_nextCountTime: 0
   m_amountOfDamageAtOneTime: 100
   m_enemyDeadVoice: {fileID: 8300000, guid: 0e138f946a2d4f7479c264715f90ddee, type: 3}
   m_enemyDamageVoice: {fileID: 8300000, guid: 7703d3c7d29c31247b1decad5a8687b3, type: 3}
+  m_BGMObject: {fileID: 1273075867}
   m_agent: {fileID: 0}
   m_Enemy_HP: 100
   m_damage: 0
@@ -129222,12 +129223,13 @@ MonoBehaviour:
   m_movePoint_S: {fileID: 287972356}
   m_target: {fileID: 457835537}
   m_enemyTrans: {fileID: 1046092715}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 2070867222}
   m_attackCollider: {fileID: 706880864}
   m_nextCountTime: 0
   m_amountOfDamageAtOneTime: 100
   m_enemyDeadVoice: {fileID: 8300000, guid: 0e138f946a2d4f7479c264715f90ddee, type: 3}
   m_enemyDamageVoice: {fileID: 8300000, guid: 7703d3c7d29c31247b1decad5a8687b3, type: 3}
+  m_BGMObject: {fileID: 1273075867}
   m_agent: {fileID: 0}
   m_Enemy_HP: 100
   m_damage: 0
@@ -180398,12 +180400,13 @@ MonoBehaviour:
   m_movePoint_S: {fileID: 287972356}
   m_target: {fileID: 457835537}
   m_enemyTrans: {fileID: 1447363191}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 1438499882}
   m_attackCollider: {fileID: 627653268}
   m_nextCountTime: 0
   m_amountOfDamageAtOneTime: 100
   m_enemyDeadVoice: {fileID: 8300000, guid: 0e138f946a2d4f7479c264715f90ddee, type: 3}
   m_enemyDamageVoice: {fileID: 8300000, guid: 7703d3c7d29c31247b1decad5a8687b3, type: 3}
+  m_BGMObject: {fileID: 1273075867}
   m_agent: {fileID: 0}
   m_Enemy_HP: 100
   m_damage: 0
@@ -183028,12 +183031,13 @@ MonoBehaviour:
   m_movePoint_S: {fileID: 787727979}
   m_target: {fileID: 457835537}
   m_enemyTrans: {fileID: 1471317669}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 2037714129}
   m_attackCollider: {fileID: 269284829}
   m_nextCountTime: 0
   m_amountOfDamageAtOneTime: 100
   m_enemyDeadVoice: {fileID: 8300000, guid: 0e138f946a2d4f7479c264715f90ddee, type: 3}
   m_enemyDamageVoice: {fileID: 8300000, guid: 949df71820336b0408c41a888d3c001d, type: 3}
+  m_BGMObject: {fileID: 1273075867}
   m_agent: {fileID: 0}
   m_Enemy_HP: 100
   m_damage: 0
@@ -219975,12 +219979,13 @@ MonoBehaviour:
   m_movePoint_S: {fileID: 57035175}
   m_target: {fileID: 457835537}
   m_enemyTrans: {fileID: 1785333027}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 944412169}
   m_attackCollider: {fileID: 334181396}
   m_nextCountTime: 0
   m_amountOfDamageAtOneTime: 100
   m_enemyDeadVoice: {fileID: 8300000, guid: 0e138f946a2d4f7479c264715f90ddee, type: 3}
   m_enemyDamageVoice: {fileID: 8300000, guid: 7703d3c7d29c31247b1decad5a8687b3, type: 3}
+  m_BGMObject: {fileID: 1273075867}
   m_agent: {fileID: 0}
   m_Enemy_HP: 100
   m_damage: 0
@@ -257838,12 +257843,13 @@ MonoBehaviour:
   m_movePoint_S: {fileID: 57035175}
   m_target: {fileID: 457835537}
   m_enemyTrans: {fileID: 2081957580}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 1538226443}
   m_attackCollider: {fileID: 1479492287}
   m_nextCountTime: 0
   m_amountOfDamageAtOneTime: 100
   m_enemyDeadVoice: {fileID: 8300000, guid: 0e138f946a2d4f7479c264715f90ddee, type: 3}
   m_enemyDamageVoice: {fileID: 8300000, guid: 7703d3c7d29c31247b1decad5a8687b3, type: 3}
+  m_BGMObject: {fileID: 1273075867}
   m_agent: {fileID: 0}
   m_Enemy_HP: 100
   m_damage: 0
