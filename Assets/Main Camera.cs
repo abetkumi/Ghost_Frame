@@ -69,12 +69,12 @@ public class MainCamera : MonoBehaviour
         else if (cameraStatus == CameraStatus.First_Parson)
         {
             //カメラの回転
-            m_subcameraObject.transform.Rotate(Vector3.right * vert * 90.0f * Time.deltaTime);
-            m_playerObject.transform.RotateAround(m_subcameraObject.transform.position, Vector3.up, horiz);
+            m_subcameraObject.transform.Rotate(Vector3.right * vert * 60.0f * Time.deltaTime);
+            m_playerObject.transform.RotateAround(m_subcameraObject.transform.position, Vector3.up, horiz * 0.5f);
         }
 
         //1人称視点、3人称視点の切り替え
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("Camera"))
         {
             if (m_cameraObject.activeSelf)
             {     

@@ -8,7 +8,8 @@ using TMPro;
 
 public class TitleButtonScript : MonoBehaviour
 {
-    [SerializeField] Button m_focusButton;
+    [SerializeField] Button m_focusButton_Start;
+    [SerializeField] Button m_focusButton_End;
     [SerializeField] Image m_loadingObject;
     [SerializeField] TextMeshProUGUI m_startButtonTextUI;
     [SerializeField] TextMeshProUGUI m_endButtonTextUI;
@@ -26,9 +27,11 @@ public class TitleButtonScript : MonoBehaviour
         t = 0.0f;
         m_loadtext = 0.0f;
         m_titleScript = m_titleManagerObject.GetComponent<TitleScript>();
-        m_focusButton = m_focusButton.GetComponent<Button>();
+        m_focusButton_Start = m_focusButton_Start.GetComponent<Button>();
+        m_focusButton_End = m_focusButton_End.GetComponent<Button>();
         m_loadingObject.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         m_loadingTextUI.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        m_focusButton_Start.Select();
     }
 
     // ボタンが押された場合、今回呼び出される関数
@@ -37,6 +40,8 @@ public class TitleButtonScript : MonoBehaviour
         if (!m_startLoading)
         {
             m_startLoading = true;
+            EventSystem.current.SetSelectedGameObject(null);
+            m_focusButton_Start.Select();
             await UniTask.Delay(3000);
             //メインゲームシーンに移動する
             m_titleScript.LoadScene("School").Forget();
@@ -60,7 +65,7 @@ public class TitleButtonScript : MonoBehaviour
         if (m_startLoading)
         {
             t += Time.deltaTime;
-            m_loadtext += Time.deltaTime/2.0f;
+            m_loadtext += Time.deltaTime / 2.0f;
 
             m_startButtonTextUI.color = new Color(1.0f, 1.0f, 1.0f, 1.0f - t);
             m_endButtonTextUI.color = new Color(1.0f, 1.0f, 1.0f, 1.0f - t);
@@ -69,7 +74,7 @@ public class TitleButtonScript : MonoBehaviour
             if (t > 1.0f)
             {
                 t = 1.0f;
-                m_focusButton.gameObject.SetActive(false);
+                m_focusButton_Start.gameObject.SetActive(false);
             }
             if (m_loadtext > 1.0f)
             {

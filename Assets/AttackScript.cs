@@ -54,7 +54,7 @@ public class AttackScript : MonoBehaviour
                 }
 
                 //Eボタンで攻撃する
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Action"))
                 {
                     doAttack(hit.transform);
                     isShot = false;
@@ -83,7 +83,7 @@ public class AttackScript : MonoBehaviour
                 }
 
                 //Eボタンで攻撃する
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Action"))
                 {
                     doAttack_Magatama(hit.transform);
                     isShot = false;

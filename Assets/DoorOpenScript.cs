@@ -51,7 +51,7 @@ public class DoorOpenScript : MonoBehaviour
         }
 
         //ƒhƒA‚ðŠJ‚¯‚é
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Action"))
         {
             m_audioSource.PlayOneShot(m_DoorSE);
             m_animator.SetBool("Open", !m_animator.GetBool("Open"));

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: QchokMaterial(AirSticker)
+  m_Name: "Y\u3067\u30AB\u30E1\u30E9\u3092\u69CB\u3048\u308BMaterial(AirSticker)"
   m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 9f1a819a7e7c9ec4296e5cdf4c47422b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 963023785e9fc7d42be1ff88e7b98654, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -73,7 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9f1a819a7e7c9ec4296e5cdf4c47422b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 963023785e9fc7d42be1ff88e7b98654, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:

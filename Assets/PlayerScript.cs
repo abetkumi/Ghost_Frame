@@ -93,7 +93,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     //3人称視点の移動
                     //ダッシュ
-                    if (Input.GetKey("left shift"))
+                    if (Input.GetKey("left shift")||Input.GetButton("Sprit"))
                     {
                         m_playerAnimStatus = PlayerStatus.Run;
                         m_moveDirection *= m_runSpeed;

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Cysharp.Threading.Tasks;
 using TMPro;
+using UnityEngine.EventSystems;
 
 //ゲーム進行用ステータスの列挙型の定義
 enum GameStatus
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     GameClearScript m_gameClearScript;
     //ポーズメニュー用スクリプト
     [SerializeField] GameObject m_pauseObject;
+    PauseButtonScript m_pauseScript;
     //ステータス用変数
     GameStatus m_gameStatus = GameStatus.Init;
 
@@ -92,6 +94,8 @@ public class GameManager : MonoBehaviour
         m_BGMScript = m_BGMObject.GetComponent<BGMScript>();
         //オーディオソース
         m_audioSource = GetComponent<AudioSource>();
+        //ポーズメニュー
+        m_pauseScript = m_pauseObject.GetComponent<PauseButtonScript>();
 
         // ディザリングがオンになる
         Shader.EnableKeyword("_DITHERING_ON");
@@ -136,10 +140,12 @@ public class GameManager : MonoBehaviour
             m_gameStatus = GameStatus.GameOver;
         }
         //ポーズ画面移行
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause"))
         {
             m_gameStatus = GameStatus.GamePause;
             m_pauseObject.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            m_pauseScript.m_focusButton_Title.Select();
             Time.timeScale = 0.0f;
         }
         //BGM変更
@@ -194,14 +200,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void doGamePause()
+    public void doGamePause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            m_gameStatus = GameStatus.GamePlay;
-            m_pauseObject.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
+        m_gameStatus = GameStatus.GamePlay;
+        m_pauseObject.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     //アウトゲーム用メソッド
@@ -229,7 +232,7 @@ public class GameManager : MonoBehaviour
                 }
                 m_gameClearImage.color = new Color(1.0f, 1.0f, 1.0f, t);
                 myTMP.doColor(t);
-                if (Input.anyKeyDown)
+                if (Input.anyKeyDown||Input.GetButtonDown("Action"))
                 {
                     m_gameStatus = GameStatus.Init;
                     Debug.Log("タイトルに戻る");
@@ -238,7 +241,11 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameStatus.GamePause:
-                doGamePause();
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause"))
+                {
+                    EventSystem.current.SetSelectedGameObject(null);
+                    doGamePause();
+                }
                 break;
             default:
                 break;

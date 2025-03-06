@@ -295,7 +295,7 @@ Animator:
   m_GameObject: {fileID: 277162650}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f897173619c1ef24cb8832205e1f10d9, type: 2}
+  m_Controller: {fileID: 9100000, guid: bc53e863d5e3c5c4f91f1e041941eea5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -319,9 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1352913571}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -425,7 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bdf4c049ba8be4e8667e3c64510da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_focusButton: {fileID: 277162654}
+  m_focusButton_Start: {fileID: 1352913571}
+  m_focusButton_End: {fileID: 277162654}
   m_loadingObject: {fileID: 1327381665}
   m_startButtonTextUI: {fileID: 749431697}
   m_endButtonTextUI: {fileID: 325752759}
@@ -695,7 +696,7 @@ MonoBehaviour:
   m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
+  m_SubmitButton: Action
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
@@ -1335,9 +1336,9 @@ GameObject:
   - component: {fileID: 1352913573}
   - component: {fileID: 1352913572}
   - component: {fileID: 1352913571}
-  - component: {fileID: 1352913574}
   - component: {fileID: 1352913575}
   - component: {fileID: 1352913576}
+  - component: {fileID: 1352913577}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -1378,10 +1379,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 277162654}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 3
@@ -1472,27 +1473,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352913568}
   m_CullTransparentMesh: 1
---- !u!95 &1352913574
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352913568}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f897173619c1ef24cb8832205e1f10d9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1352913575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,7 +1485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bdf4c049ba8be4e8667e3c64510da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_focusButton: {fileID: 1352913571}
+  m_focusButton_Start: {fileID: 1352913571}
+  m_focusButton_End: {fileID: 277162654}
   m_loadingObject: {fileID: 1327381665}
   m_startButtonTextUI: {fileID: 749431697}
   m_endButtonTextUI: {fileID: 325752759}
@@ -1607,6 +1588,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1352913577
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352913568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc53e863d5e3c5c4f91f1e041941eea5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1382741102
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,9 +35,12 @@ public class MistWallScript : MonoBehaviour
         }
     }
 
-    public void doBreak()
+    async public void doBreak()
     {
         m_messageScript.m_messageStatus = MessageStatus.MistWallBreak;
+        m_audioSource.PlayOneShot(m_MistBreakSE);
+        //3•b‘Ò‚Â
+        await UniTask.Delay(3000);
         Destroy(gameObject);
     }
 }

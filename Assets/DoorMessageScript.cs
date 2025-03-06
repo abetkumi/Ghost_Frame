@@ -41,7 +41,7 @@ public class DoorMessageScript : MonoBehaviour
         }
         myTMP.color = new Color(1.0f, 1.0f, 1.0f, t * t);
         m_messageWindow.color = new Color(1.0f, 1.0f, 1.0f, t * t);
-        myTMP.text = "Eでドアを開く";
+        myTMP.text = "LBでドアを開く";
     }
 
     void doDoorCloseMessage()
@@ -53,7 +53,7 @@ public class DoorMessageScript : MonoBehaviour
         }
         myTMP.color = new Color(1.0f, 1.0f, 1.0f, t * t);
         m_messageWindow.color = new Color(1.0f, 1.0f, 1.0f, t * t);
-        myTMP.text = "Eでドアを閉じる";
+        myTMP.text = "LBでドアを閉じる";
     }
 
     void doMistWallCloseMessage()
