@@ -52,7 +52,7 @@
 <img src="Assets/texture_Readme/Shot.png" width="600"><br>
 </p>
 
-1. 勾玉<br/>
+2. 勾玉<br/>
    - 学校内に設置されている勾玉を壊すと霧でふさがれている通路の通行が可能になります。
    <br/>
    - 勾玉を壊すには後述する攻撃を最大までチャージしないと壊せないようになっています。
@@ -99,7 +99,7 @@
 ### エネミーについて
 エネミーもステートで管理しています。
 
-<img src="Assets/texture_Readme/敵のステート.png" width="600"><br>
+<img src="Assets/texture_Readme/エネミーステート.png" width="600"><br>
 エネミーのステート管理
 </p>
 

@@ -23,6 +23,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] GameObject m_playerObject;
     [SerializeField] GameObject m_playerHPObject;
     [SerializeField] GameObject m_attackObject;
+    [SerializeField] GameObject m_enemyHPBarObject;
+    [SerializeField] GameObject m_subCameraObject;
     [SerializeField] public Transform m_movePoint_N;
     [SerializeField] private Transform m_movePoint_S;
     [SerializeField] private Transform m_target;
@@ -53,6 +55,7 @@ public class EnemyScript : MonoBehaviour
     private Slider m_bulkHPSlider;
     private AudioSource m_audioSource;
     private EnemyStatus m_enemyStatus;
+    private Vector3 myVec = Vector3.zero;
 
     public EnemyStatus EnemyStatus
     {
@@ -223,6 +226,17 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    //ビルボード処理用メソッド
+    public void doBillBoarding()
+    {
+        //ベクトルの引き算：2点間のベクトルを作成
+        //TMPとカメラを結ぶベクトルを作成
+        myVec = m_enemyHPBarObject.transform.position - m_subCameraObject.transform.position;
+        //myVec.normalized,myVecベクトルを正規化：長さが1
+        //  ベクトルの正規化：単位ベクトルを作る
+        //TMPの向きをmyVecにする
+        m_enemyHPBarObject.transform.forward = myVec.normalized;
+    }
 
     public void doDamage()
     {
@@ -364,5 +378,6 @@ public class EnemyScript : MonoBehaviour
         doAnimation();
         doEnemyStatus();
         doDamage();
+        doBillBoarding();
     }
 }

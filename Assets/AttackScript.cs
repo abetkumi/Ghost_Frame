@@ -10,12 +10,14 @@ public class AttackScript : MonoBehaviour
     [SerializeField] AudioClip m_shoterSE;
     [SerializeField] AudioClip m_cameraChargeSE;
     [SerializeField] AudioClip m_cameraChargeFinishSE;
+    [SerializeField] AudioClip m_magatamaFailSE;
     EnemyScript m_enemyScript;
     Camera m_cam;
     // MainCamera cameraScript;
     [SerializeField] private AudioSource m_audioSource;
     [SerializeField] private AudioSource m_audioSource_ChargeSE;
     [SerializeField] private AudioSource m_audioSource_ChargeFinishSE;
+    [SerializeField] private AudioSource m_audioSource_MagatamaFailSE;
     public bool isShot;
     public Image m_attack_Gauge;
     public float m_attack_max = 100.0f;
@@ -38,7 +40,7 @@ public class AttackScript : MonoBehaviour
         if (cameraStatus == CameraStatus.First_Parson)
         {
             //‰æ–Ê’†‰›‚©‚çƒŒƒC‚ð”ò‚Î‚·
-            ray = m_cam.ScreenPointToRay(new Vector3(Screen.width / 2.0f, Screen.height / 2.0f, 0.0f));
+            ray = m_cam.ScreenPointToRay(new Vector3(Screen.width / 2.0f, Screen.height / 2.0f, 1.0f));
             
             //ƒŒƒC‚ª“G‚Ì“ª‚É“–‚½‚Á‚½Žž
             if (Physics.Raycast(ray, out RaycastHit hit, 30.0f, LayerMask.GetMask("EnemyHead")))
@@ -154,8 +156,12 @@ public class AttackScript : MonoBehaviour
     {
         if(m_attack_current >= m_attack_max -1)
         {
-          //Œù‹Ê‚ð‰ó‚·
-          target.GetComponent<MagatamaScript>().doBreak();
+            //Œù‹Ê‚ð‰ó‚·
+            target.GetComponent<MagatamaScript>().doBreak();
+        }
+        else
+        {
+            m_audioSource_MagatamaFailSE.PlayOneShot(m_magatamaFailSE);
         }
 
         m_attack_current = 0;
