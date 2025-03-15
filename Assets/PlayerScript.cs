@@ -33,6 +33,7 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] GameObject m_gameClearObject;
     [SerializeField] AudioClip m_asiotoSE;
     [SerializeField] AudioClip m_bressSE;
+    [SerializeField] public AudioClip m_damageSE;
 
     //カメラスクリプト用変数
     MainCamera m_cameraScript;
@@ -105,23 +106,16 @@ public class PlayerScript : MonoBehaviour
                         m_playerAnimStatus = PlayerStatus.Walk;
                         m_moveDirection *= m_speed;
                     }
-
                 }
                 else
                 {
                     //1人称視点の移動
-
-                        transform.RotateAround(transform.position, Vector3.up, horiz * Time.deltaTime);
-                    
+                    transform.RotateAround(transform.position, Vector3.up, horiz * Time.deltaTime);
                     //歩き
-
-                        m_playerAnimStatus = PlayerStatus.Walk;
-                        m_moveDirection *= m_speed;                    
-
+                    m_playerAnimStatus = PlayerStatus.Walk;
+                    m_moveDirection *= m_speed;
                     //方向転換
-
-                        transform.RotateAround(transform.position, Vector3.up, horiz * Time.deltaTime);
-                    
+                    transform.RotateAround(transform.position, Vector3.up, horiz * Time.deltaTime);
                 }
             }
             else
@@ -236,6 +230,7 @@ public class PlayerScript : MonoBehaviour
                 break;
             case PlayerStatus.Damage:
                 m_moveDirection *= 0.0f;
+                m_audioSource.pitch = 0.9f;
                 //アニメーション
                 m_animator.SetBool("runFlag", false);
                 m_animator.SetBool("walkFlag", false);
@@ -245,10 +240,6 @@ public class PlayerScript : MonoBehaviour
                 m_animator.SetBool("damageFlag", true);
                 m_animator.SetBool("deathFlag", false);
                 m_animator.SetBool("camera_shotFlag", false);
-                if (m_audioSource.isPlaying)
-                {
-                    m_audioSource.Stop();
-                }
                 break;
             case PlayerStatus.Death:
                 //アニメーション

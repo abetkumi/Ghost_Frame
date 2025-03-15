@@ -6,7 +6,9 @@ public class DoorOpenScript : MonoBehaviour
 {
     [SerializeField] GameObject m_doorMessageObject;
     DoorMessageScript m_doorMessageScript;
+    [SerializeField] GameObject m_FinaldoorObject;
     [SerializeField] private AudioClip m_DoorSE;
+
     private AudioSource m_audioSource;
     //ƒJƒƒ‰—p•Ï”
     MainCamera m_cameraScript;

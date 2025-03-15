@@ -42,6 +42,7 @@ public class EnemyAttackScript : MonoBehaviour
             m_playerHPScript.doTakeDamage(20);
             m_damageScreenScript.Damaged();
             m_damageScreenScript_F.Damaged();
+            m_playerScript.m_audioSource.PlayOneShot(m_playerScript.m_damageSE);
             m_mainCameraScript.cameraStatus = CameraStatus.Third_Parson;
 
             isWaitTime = true;
