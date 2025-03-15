@@ -58,9 +58,12 @@ public class PlayerHPScript : MonoBehaviour
         if (m_player_Fainal_HP <= 0.0f)
         {
             Debug.Log("Dead");
-//            Destroy(gameObject);
             m_playerScript.doDead();
             m_audioSource.PlayOneShot(m_shoutSE);
+        }
+        else
+        {
+            m_playerScript.m_playerAnimStatus = PlayerStatus.Damage;
         }
     }
 
@@ -92,10 +95,6 @@ public class PlayerHPScript : MonoBehaviour
             if (m_damage <= 0)
             {
                 isReducing = false;
-                //if (isHPView == true)
-                //{
-
-                //}
 
                 isHPView = true;
             }

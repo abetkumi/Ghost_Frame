@@ -5,21 +5,26 @@ using Cysharp.Threading.Tasks;
 
 public class EnemyAttackScript : MonoBehaviour
 {
+    [SerializeField] GameObject m_playerObject;
     [SerializeField] GameObject m_playerHPObject;
     [SerializeField] GameObject m_DamageScreenObject;
     [SerializeField] GameObject m_DamageScreenObject_F;
+    PlayerScript m_playerScript;
     PlayerHPScript m_playerHPScript;
     DamageScreenScript m_damageScreenScript;
     DamageScreenScript m_damageScreenScript_F;
+    MainCamera m_mainCameraScript;
 
     private bool isWaitTime = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_playerScript = m_playerObject.GetComponent<PlayerScript>();
         m_playerHPScript = m_playerHPObject.GetComponent<PlayerHPScript>();
         m_damageScreenScript = m_DamageScreenObject.GetComponent<DamageScreenScript>();
         m_damageScreenScript_F = m_DamageScreenObject_F.GetComponent<DamageScreenScript>();
+        m_mainCameraScript = Camera.main.GetComponent<MainCamera>();
     }
 
     //çUåÇÇ™ÉvÉåÉCÉÑÅ[Ç…ìñÇΩÇ¡ÇΩéû
@@ -37,6 +42,8 @@ public class EnemyAttackScript : MonoBehaviour
             m_playerHPScript.doTakeDamage(20);
             m_damageScreenScript.Damaged();
             m_damageScreenScript_F.Damaged();
+            m_mainCameraScript.cameraStatus = CameraStatus.Third_Parson;
+
             isWaitTime = true;
         }
     }

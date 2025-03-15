@@ -139,6 +139,7 @@
         </head>
         <body class="vscode-body vscode-light">
             <h1 id="gostframe">GostFrame</h1>
+  <!-- タイトルの画像を挿入 -->
 <p align="center">
 <img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Title.png" alt="GhostFrame">
 </p><br/>
@@ -183,6 +184,7 @@
 <li>Visual Studio 2022</li>
 <li>Visual Studio Code</li>
 <li>Adobe Photoshop 2024</li>
+<li>Git hub</li>
 </ul>
 </li>
 </ul>
@@ -190,10 +192,12 @@
 <p>夜の廃校となった小学校が舞台のホラー風FPSゲームです。<br/>
 学校内では幽霊がさまよっておりプレイヤーを攻撃してきます。<br/>
 プレイヤーはカメラを使用して幽霊のいる学校からの脱出を目指します。<br/></p>
+  <!-- ゲーム内の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Game1.png" width="600"><br></p>
 </p>
 <p>黒板には脱出のヒントが書かれています。<br/>
-一部の漢字が未対応のフォントであったのと小学校であるためヒントは子供っぽくなるよう一部ひらがなで書きました。<br/></p>
+一部の漢字が未対応のフォントであったのと舞台が小学校であるためヒントは子供っぽくなるよう一部ひらがなで書きました。<br/></p>
+  <!-- チュートリアル用の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Decal.png" width="600"><br></p>
 </p>
 <h3 id="ゲーム内ギミック">ゲーム内ギミック</h3>
@@ -204,40 +208,27 @@
 <li>プレイヤーに対して攻撃してくるエネミーです。プレイヤーを発見すると近づいてきて攻撃してきます。<br/></li>
 <li>プレイヤーはカメラを使って幽霊を写真に取ることによって相手にダメージを与えることができます。<br/></li>
 <li>顔を写さないとダメージが与えられないようになっています。
+<br/>
 <br/></li>
 </ul>
 </li>
 </ol>
+  <!-- 敵攻撃時の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Shot.png" width="600"><br></p>
 </p>
-<ol>
-<li>
-<p>勾玉<br/></p>
+<ol start="2">
+<li>勾玉<br/>
 <ul>
 <li>学校内に設置されている勾玉を壊すと霧でふさがれている通路の通行が可能になります。
 <br/></li>
 <li>勾玉を壊すには後述する攻撃を最大までチャージしないと壊せないようになっています。
 <br/></li>
 </ul>
-<!-- 勾玉を壊すgifを挿入 -->
 </li>
 </ol>
+  <!-- 勾玉の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\MagatamaBreak.gif" width="600"><br></p>
 </p>
-<!-- テスト用コメント
-1. テスト
-```json
-プログラミングコードはここに書く
-
-```
-- てすと
-- てすと１
-- てすと２
-
-|名前|説明|
-|---|---|
-|SSR|スクリーンスペースでの反射アルゴリズム|
-|Decal|テクスチャを貼り付ける処理| -->
 <h3 id="プレイヤーについて">プレイヤーについて</h3>
 <p>プレイヤーは下記の方法で操作ができます。</p>
 <table>
@@ -249,24 +240,28 @@
 </thead>
 <tbody>
 <tr>
-<td>WASD</td>
+<td>左スティック</td>
 <td>移動</td>
 </tr>
 <tr>
-<td>↑↓←→</td>
+<td>右スティック</td>
 <td>視点移動</td>
 </tr>
 <tr>
-<td>Shift</td>
+<td>RB</td>
 <td>カメラを構えていない時：ダッシュ</td>
 </tr>
 <tr>
-<td>Q</td>
+<td>△ボタン</td>
 <td>カメラを構える：カメラを離す</td>
 </tr>
 <tr>
-<td>E</td>
+<td>LB</td>
 <td>カメラを構えている時：シャッターを切る <br/> カメラを構えていない時：ドアを開ける</td>
+</tr>
+<tr>
+<td>セレクトボタン</td>
+<td>ポーズ画面</td>
 </tr>
 </tbody>
 </table>
@@ -277,7 +272,8 @@
 攻撃にはフェイタル攻撃というものがあり、エネミーの攻撃直前のタイミングで攻撃チャージが最大になるカウンター攻撃と最大チャージ攻撃時の追加攻撃のチャンスがあります。<br/></p>
 <h3 id="エネミーについて">エネミーについて</h3>
 <p>エネミーもステートで管理しています。</p>
-<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\敵のステート.png" width="600"><br>
+  <!-- ステート解説用の画像を挿入 -->
+<p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\エネミーステート.png" width="600"><br>
 エネミーのステート管理</p>
 </p>
 <h2 id="使用した技術">使用した技術</h2>
@@ -300,6 +296,7 @@
 巡回用のポインタを置き、ポインタに近づくと別のポインタに向かって歩く処理を実現しました。<br/>
 プレイヤーが近づいた場合、プレイヤーコリジョンタグを持ったものがサーチ用の敵のコリジョンに接触することによって、
 ナビメッシュの目標をプレイヤーに変更することができました。</p>
+  <!-- エネミーのナビメッシュ用の画像を挿入 -->
 <img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Navmesh.gif" width="600">
 </p>
 <h3 id="unitask">Unitask</h3>
@@ -315,6 +312,7 @@
 <h3 id="デカール">デカール</h3>
 <p>チュートリアル用の説明を黒板に表示させる為にデカールを使いました。<br/>
 デカールを使うことによって黒板に書かれている文字や絵がちゃんと黒板に書かれているように見せることができました。</p>
+  <!-- デカール説明用の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Decal.png" width="600"><br></p>
 </p>
 <h3 id="air-sticker">Air Sticker</h3>
@@ -327,18 +325,22 @@ AirStickerはデカールを受けるレシーバーオブジェクトを指定�
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\AirSticker2.png" width="720"><br></p>
 </p>
 <p>2つ目は窓などの遮蔽物があるとディザリングの透過処理で見ることができませんでした。<br/></p>
+  <!-- AirStickerのオン、オフの画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\AirSticker.png" width="720"><br>
 左：AirSticker適用前　右：AirSticker適用後</p>
 </p>
 <p>これはUnityのデカールは下記の図のようにDepthNormalPrepassで作成された深度情報を元にデカールを貼り付けるからです。</p>
+  <!-- デカールの適用する深度値の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Depth.png" width="600"><br>
 DepthNormalPrepass</p>
 </p>
+  <!-- 深度値を利用したデカールの画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Depth2.png" width="600"><br>
 D-BufferRender</p>
 </p>
 <p>一方、AirStickerはメッシュを生成するデカールとなっていて、Unityのデカールの特殊な処理と異なり普通のモデル描画です。<br/>
 このようにAirStickerを利用することで、通常の背景と同じようにデカールを描画できるためこの問題を解決することができました。<br/></p>
+  <!-- AirSticker適用後の画像を挿入 -->
 <p><img src="file:///c:\Users\阿部匠\Ghost_Frame\Assets\texture_Readme\Depth3.png" width="600"><br></p>
 </p>
 

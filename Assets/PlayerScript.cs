@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ using UnityEngine.UIElements;
 
 
 //プレイヤーステート用
-enum PlayerStatus
+public enum PlayerStatus
 {
     Idle,
     Walk,
@@ -49,7 +50,7 @@ public class PlayerScript : MonoBehaviour
     //初期配置用変数
     Vector3 m_initPos = new Vector3(21.0f,12.0f,5.0f);
     //ステータス用変数
-    PlayerStatus m_playerAnimStatus = PlayerStatus.Idle;//アニメーションステート
+    public PlayerStatus m_playerAnimStatus = PlayerStatus.Idle;//アニメーションステート
     //ゲームクリア用変数
     public Vector3 m_dest;
     //オーディオソース用変数
@@ -73,7 +74,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     //プレイヤーの移動処理メソッド
-    public void doMove()
+    async public void doMove()
     {
         if(m_playerAnimStatus == PlayerStatus.Death)
         {
@@ -86,7 +87,7 @@ public class PlayerScript : MonoBehaviour
         //プレイヤーの移動処理
         if (m_controller.isGrounded)
         {
-            if (m_moveDirection.magnitude > 0.1f)
+            if (m_moveDirection.magnitude > 0.1f && m_playerAnimStatus != PlayerStatus.Damage)
             {
                 m_moveDirection = transform.TransformDirection(m_moveDirection);
                 if(m_cameraScript.cameraStatus == CameraStatus.Third_Parson)
@@ -109,26 +110,31 @@ public class PlayerScript : MonoBehaviour
                 else
                 {
                     //1人称視点の移動
-                    if (Input.GetKey("a") || Input.GetKey("d"))
-                    {
+
                         transform.RotateAround(transform.position, Vector3.up, horiz * Time.deltaTime);
-                    }
+                    
                     //歩き
-                    else
-                    {
+
                         m_playerAnimStatus = PlayerStatus.Walk;
                         m_moveDirection *= m_speed;                    
-                    }
+
                     //方向転換
-                    if (Input.GetKey("a") || Input.GetKey("d"))
-                    {
+
                         transform.RotateAround(transform.position, Vector3.up, horiz * Time.deltaTime);
-                    }
+                    
                 }
             }
             else
             {
-                m_playerAnimStatus = PlayerStatus.Idle;
+                if (m_playerAnimStatus != PlayerStatus.Damage)
+                {
+                    m_playerAnimStatus = PlayerStatus.Idle;
+                }
+                else
+                {
+                    await UniTask.Delay(1000);
+                    m_playerAnimStatus = PlayerStatus.Idle;
+                }
             }
         }
 
@@ -229,6 +235,7 @@ public class PlayerScript : MonoBehaviour
                 m_animator.SetBool("camera_shotFlag", false);
                 break;
             case PlayerStatus.Damage:
+                m_moveDirection *= 0.0f;
                 //アニメーション
                 m_animator.SetBool("runFlag", false);
                 m_animator.SetBool("walkFlag", false);
@@ -305,7 +312,7 @@ public class PlayerScript : MonoBehaviour
         m_animator.SetTrigger("GameClear");
         m_animator.SetBool("walkFlag", false);
         m_animator.SetBool("runFlag", false);
-        m_audioSource.pitch = 0.8f;
+        m_audioSource.pitch = 1.1f;
         if (!m_audioSource.isPlaying)
         {
             m_audioSource.PlayOneShot(m_bressSE);

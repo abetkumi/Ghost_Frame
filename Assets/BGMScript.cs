@@ -6,8 +6,6 @@ public enum BGMStatus
 {
     NormalBGM,
     ChaseBGM,
-    //GameOverBGM,
-    //GameClearBGM,
 }
 
 public class BGMScript : MonoBehaviour

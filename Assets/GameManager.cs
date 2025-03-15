@@ -200,6 +200,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void doGameStop()
+    {
+        t += Time.deltaTime * 0.2f;
+        if (t > 1.0f)
+        {
+            t = 1.0f;
+        }
+        m_gameClearImage.color = new Color(1.0f, 1.0f, 1.0f, t);
+        myTMP.doColor(t);
+        if (Input.anyKeyDown || Input.GetButtonDown("Action"))
+        {
+            m_gameStatus = GameStatus.Init;
+            Debug.Log("タイトルに戻る");
+            //メインゲームシーンに移動する
+            SceneManager.LoadScene("Title");
+        }
+    }
     public void doGamePause()
     {
         m_gameStatus = GameStatus.GamePlay;
@@ -225,20 +242,7 @@ public class GameManager : MonoBehaviour
                 doGameClear();
                 break;
             case GameStatus.GameStop:
-                t += Time.deltaTime * 0.2f;
-                if (t > 1.0f)
-                {
-                    t = 1.0f;
-                }
-                m_gameClearImage.color = new Color(1.0f, 1.0f, 1.0f, t);
-                myTMP.doColor(t);
-                if (Input.anyKeyDown||Input.GetButtonDown("Action"))
-                {
-                    m_gameStatus = GameStatus.Init;
-                    Debug.Log("タイトルに戻る");
-                    //メインゲームシーンに移動する
-                    SceneManager.LoadScene("Title");
-                }
+                doGameStop();
                 break;
             case GameStatus.GamePause:
                 if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause"))

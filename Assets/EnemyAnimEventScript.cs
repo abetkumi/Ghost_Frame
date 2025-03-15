@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,9 +41,11 @@ public class EnemyAnimEventScript : MonoBehaviour
     }
 
     //攻撃アニメーション終了時
-    void StatusEnd()
+    async void StatusEnd()
     {
+        await UniTask.Delay(10);
         m_enemyScript.ChangeEnemyStatusIfPossible( EnemyStatus.Search );
+        Debug.Log("チェイスに戻る");
     }
 
     //歩きアニメーション開始時

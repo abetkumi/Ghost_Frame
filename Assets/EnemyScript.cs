@@ -106,7 +106,6 @@ public class EnemyScript : MonoBehaviour
         m_BGMScript = m_BGMObject.GetComponent<BGMScript>();
         m_hpSlider.value = 1.0f;
         m_bulkHPSlider.value = 1.0f;
-        ChangeEnemyStatusIfPossible( EnemyStatus.Idle );
         doInit();
     }
 
@@ -116,7 +115,7 @@ public class EnemyScript : MonoBehaviour
         m_Enemy_Fainal_HP = m_Enemy_MAX_HP;
         m_hpSlider.value = 1.0f;
         m_bulkHPSlider.value = 1.0f;
-        m_enemyStatus = EnemyStatus.Idle;
+        ChangeEnemyStatusIfPossible(EnemyStatus.Idle);
         m_agent.SetDestination(m_movePoint_N.position);
     }
 
@@ -149,8 +148,7 @@ public class EnemyScript : MonoBehaviour
         {
             m_animator.SetBool("isIdle", false);
             m_animator.SetBool("isWalking", false);
-            m_animator.SetBool("isChase", true);
-            m_animator.SetBool("isAttack", false);
+            m_animator.SetBool("isChase", true); 
             m_animator.SetBool("isWait", false);
             m_animator.SetBool("isDamage", false);
             m_animator.SetBool("isDead", false);
@@ -160,7 +158,6 @@ public class EnemyScript : MonoBehaviour
         {
             m_animator.SetBool("isIdle", false);
             m_animator.SetBool("isWalking", false);
-            m_animator.SetBool("isChase", false);
             m_animator.SetBool("isAttack", true);
             m_animator.SetBool("isWait", false);
             m_animator.SetBool("isDamage", false);
@@ -219,7 +216,7 @@ public class EnemyScript : MonoBehaviour
     private void doChaseMove()
     {
         m_agent.SetDestination(m_target.position);
-        if (Vector3.Distance(transform.position, m_playerObject.transform.position) < 3.0f)
+        if (Vector3.Distance(transform.position, m_playerObject.transform.position) < 3.0f && m_enemyStatus == EnemyStatus.Chase)
         {
             Debug.Log("アタックステート");
             ChangeEnemyStatusIfPossible( EnemyStatus.Attack );          
